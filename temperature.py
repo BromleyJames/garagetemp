@@ -1,8 +1,10 @@
 import datetime as dt
 from pathlib import Path
 
-import adafruit_dht
-from board import D4  # This is the physical GPIO pin I used
+import adafruit_dht  # type: ignore
+
+# This is the physical GPIO pin I used
+from board import D4  # type: ignore # This is the physical GPIO pin I used
 
 # Intiailaise the device.
 dht_device = adafruit_dht.DHT22(D4)
@@ -13,13 +15,17 @@ def get_current_data() -> tuple[dt.datetime, float, float]:
 
     try:
         temperature = dht_device.temperature
-    except:
+    except RuntimeError as err:
         # It's extremely unlikely to reach negative where I live, so this is ok
+        print(err)
+        # print(temperature)  # in future write the exceptions to a log and retry
         temperature = -1.0
 
     try:
         humidity = dht_device.humidity
-    except:
+    except RuntimeError as err:
+        print(err)
+        # print(humidity)  # in future write the exceptions to a log and retry
         humidity = -1.0
 
     return time, temperature, humidity
