@@ -1,4 +1,4 @@
-name: Pylint
+name: PythonChecks
 
 on: [push]
 
@@ -19,7 +19,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install ruff
-    - name: Analysing the code with ruff
+        pip install mypy
+        pip install isort
+        
+    - name: Checking the typing with mypy
+      run: |
+        mypy $(git ls-files '*.py')
+        
+    - name: Sorting the imports with isort
+      run: |
+        isort $(git ls-files '*.py')
+        
+    - name: Checking the formatting with ruff
       run: |
         ruff check $(git ls-files '*.py')
+        
+    - name: Formatting the code with ruff
+      run: |
         ruff format $(git ls-files '*.py')
