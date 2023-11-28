@@ -3,6 +3,12 @@ Logging the temperature of my garage with a Raspberry Pi
 
 # Setup
 
+Create the python env by running:
+
+
+```python3 -m pip install -r requirements.txt```
+
+
 Run `crontab -e` and add the following:
 
 
