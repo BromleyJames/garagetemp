@@ -1,6 +1,12 @@
 # garagetemp
 Logging the temperature of my garage with a Raspberry Pi
 
+# Setup
+
+Run `crontab -e` and add the following:
+
+
+```* * * * * cd /home/pi/Programming/garagetemp && . venv/bin/activate && python temperature.py```
 
 ## TODO
 
@@ -10,8 +16,6 @@ Also import data from weather.com
 Cron jobs to
 
     - Restart the raspberry pi weekly
-    
-    - Save the temperature to a csv or parquet every minute
     
     - Save weather data every 30 minutes (?)
     
