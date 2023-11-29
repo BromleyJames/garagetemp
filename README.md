@@ -16,7 +16,7 @@ Run `crontab -e` and add the following:
 
 ## TODO
 
-Import weather data from bom FTB
+Import weather data from BOM FTP
 Also import data from weather.com 
 
 Cron jobs to
