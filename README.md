@@ -26,9 +26,22 @@ Since it's 72 hours of data, once daily should be more than enough. Use the foll
 
 This runs once a day at 4am UTC (so midday Perth).
 
+# AWS S3 setup
+
+Follow thses instructions to get started with your preferred configuration:
+
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#configuration
+
+Then create a .env file in this repository with your S3 bucket name, e.g:
+
+`s3_bucket=mybucketname`
+
+
+Still need to change the code to upload and archive weather data
+Archive temperature data
+
 ## TODO
 
-Import weather data from BOM FTP
 Also import data from weather.com 
 
 Cron jobs to

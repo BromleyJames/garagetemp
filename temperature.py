@@ -43,6 +43,7 @@ def generate_filename() -> Path:
 time, temperature, humidity = get_current_data()
 output_file = generate_filename()
 Path("./output").mkdir(parents=True, exist_ok=True)
+Path("./archive").mkdir(parents=True, exist_ok=True)
 output_file.touch(exist_ok=True)
 
 with open(output_file, "a+") as f:
