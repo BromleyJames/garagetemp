@@ -46,7 +46,9 @@ Also import data from weather.com
 
 Cron jobs to
 
-    - Restart the raspberry pi weekly
+    - Restart the raspberry pi daily
+
+
     
     - Save weather data every 30 minutes (?)
     
